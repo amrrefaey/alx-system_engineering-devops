@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Ap | awk '{if(/bin/bash~/\/$/)printf%s, ,/bin/bash;else print /bin/bash}' | LC_COLLATE=C sort | sed 's/, $/\//'
+ls -1p | sed 's/\n/, /' | LC_ALL=C sort -df | sed '1s/^/..,.,/' | tr -d '\n' && echo
